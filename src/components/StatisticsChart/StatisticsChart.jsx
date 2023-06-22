@@ -5,7 +5,6 @@ import {
   LabelList,
   XAxis,
   YAxis,
-  Cell,
   CartesianGrid,
   Tooltip,
 } from 'recharts';
