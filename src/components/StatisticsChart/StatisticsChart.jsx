@@ -11,7 +11,7 @@ import {
   Legend,
 } from 'recharts';
 // для прикладу створюємо константи, в подальшому отримуватимемо дані з бекенду
-const todoByDay = 5;
+const todoByDay = 6;
 const inprogressByDay = 10;
 const doneByDay = 5;
 const todoByMonth = 30;
