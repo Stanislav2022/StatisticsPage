@@ -1,8 +1,13 @@
 import React from 'react'
+import StatisticsChart from "../StatisticsChart/StatisticsChart";
+
 
 const StatisticsPage = () => {
   return (
-    <div>StatisticsPage</div>
+    <div>
+      <StatisticsChart />
+    <PeriodPaginator/>
+    </div>
   )
 }
 
