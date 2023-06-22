@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/StatisticsPage/static/css/main.7acaea2f.css",
+    "main.js": "/StatisticsPage/static/js/main.5a35b4f3.js",
+    "index.html": "/StatisticsPage/index.html",
+    "main.7acaea2f.css.map": "/StatisticsPage/static/css/main.7acaea2f.css.map",
+    "main.5a35b4f3.js.map": "/StatisticsPage/static/js/main.5a35b4f3.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.7acaea2f.css",
+    "static/js/main.5a35b4f3.js"
+  ]
+}
