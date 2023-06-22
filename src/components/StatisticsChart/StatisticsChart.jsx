@@ -2,7 +2,7 @@ import React, { PureComponent } from 'react';
 import {
   BarChart,
   Bar,
-  Cell,
+  // Cell,
   XAxis,
   YAxis,
   CartesianGrid,
@@ -11,9 +11,9 @@ import {
   ResponsiveContainer,
 } from 'recharts';
 // для прикладу створюємо константи, в подальшому отримуватимемо дані з бекенду
-const todoByDay = 5;
-const inprogressByDay = 10;
-const doneByDay = 5;
+// const todoByDay = 5;
+// const inprogressByDay = 10;
+// const doneByDay = 5;
 
 const data = [
   {
@@ -35,16 +35,15 @@ const data = [
     amt: 2290,
   },
 ];
-const allTasksByDay = todoByDay + inprogressByDay + doneByDay;
-const todoByDayPerсent = todoByDay / allTasksByDay;
-const inprogressByDayPerсent = inprogressByDay / allTasksByDay;
-const doneByDayPerсent = doneByDay / allTasksByDay;
+// const allTasksByDay = todoByDay + inprogressByDay + doneByDay;
+// const todoByDayPerсent = todoByDay / allTasksByDay;
+// const inprogressByDayPerсent = inprogressByDay / allTasksByDay;
+// const doneByDayPerсent = doneByDay / allTasksByDay;
 
 export default class StatisticsChart extends PureComponent {
   render() {
     return (
       <ResponsiveContainer width="100%" height="100%">
-        <h1>hello</h1>
         <BarChart
           width={500}
           height={300}

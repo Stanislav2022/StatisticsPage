@@ -1,5 +1,4 @@
-
-import StatisticsPage from "components/StatisticsPage/StatisticsPage";
+import StatisticsPage from 'components/StatisticsPage/StatisticsPage';
 
 export const App = () => {
   return (
@@ -10,11 +9,10 @@ export const App = () => {
         justifyContent: 'center',
         alignItems: 'center',
         fontSize: 40,
-        color: '#010101'
+        color: '#010101',
       }}
     >
-      
-      <StatisticsPage/>
+      <StatisticsPage />
     </div>
   );
 };

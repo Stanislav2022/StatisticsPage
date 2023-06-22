@@ -1,15 +1,14 @@
-import React from 'react'
-import StatisticsChart from "../StatisticsChart/StatisticsChart";
-import PeriodPaginator from '../PeriodPaginator/PeriodPaginator'
-
+import React from 'react';
+import StatisticsChart from '../StatisticsChart/StatisticsChart';
+import PeriodPaginator from '../PeriodPaginator/PeriodPaginator';
 
 const StatisticsPage = () => {
   return (
     <div>
       <StatisticsChart />
-      <PeriodPaginator/>
+      <PeriodPaginator />
     </div>
-  )
-}
+  );
+};
 
-export default StatisticsPage
+export default StatisticsPage;
