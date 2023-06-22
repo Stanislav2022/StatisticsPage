@@ -1,69 +1,94 @@
-import React, { PureComponent } from 'react';
+import React from 'react';
 import {
   BarChart,
   Bar,
   // Cell,
+  LabelList,
   XAxis,
   YAxis,
   CartesianGrid,
   Tooltip,
   Legend,
-  ResponsiveContainer,
 } from 'recharts';
 // для прикладу створюємо константи, в подальшому отримуватимемо дані з бекенду
-// const todoByDay = 5;
-// const inprogressByDay = 10;
-// const doneByDay = 5;
+const todoByDay = 5;
+const inprogressByDay = 10;
+const doneByDay = 5;
+const allTasksByDay = todoByDay + inprogressByDay + doneByDay;
+const todoByDayPerсent = Math.round((todoByDay / allTasksByDay) * 100);
+const inprogressByDayPerсent = Math.round(
+  (inprogressByDay / allTasksByDay) * 100
+);
+const doneByDayPerсent = Math.round((doneByDay / allTasksByDay) * 100);
+
+const todoByMonth = 30;
+const inprogressByMonth = 20;
+const doneByMonth = 15;
+const allTasksByMonth = todoByMonth + inprogressByMonth + doneByMonth;
+const todoByMonthPerсent = Math.round((todoByMonth / allTasksByMonth) * 100);
+const inprogressByMonthPerсent = Math.round(
+  (inprogressByMonth / allTasksByMonth) * 100
+);
+const doneByMonthPerсent = Math.round((doneByMonth / allTasksByMonth) * 100);
 
 const data = [
   {
-    name: 'Page A',
-    uv: 4000,
-    pv: 2400,
-    amt: 2400,
+    name: 'To Do',
+    dv: todoByDay,
+    mv: todoByMonth,
+    dp: `${todoByDayPerсent}%`,
+    mp: `${todoByMonthPerсent}%`,
   },
   {
-    name: 'Page B',
-    uv: 3000,
-    pv: 1398,
-    amt: 2210,
+    name: 'In Progress',
+    dv: inprogressByDay,
+    mv: inprogressByMonth,
+    dp: `${inprogressByDayPerсent}%`,
+    mp: `${inprogressByMonthPerсent}%`,
   },
   {
-    name: 'Page C',
-    uv: 2000,
-    pv: 9800,
-    amt: 2290,
+    name: 'Done',
+    dv: doneByDay,
+    mv: doneByMonth,
+    dp: `${doneByDayPerсent}%`,
+    mp: `${doneByMonthPerсent}%`,
   },
 ];
-// const allTasksByDay = todoByDay + inprogressByDay + doneByDay;
-// const todoByDayPerсent = todoByDay / allTasksByDay;
-// const inprogressByDayPerсent = inprogressByDay / allTasksByDay;
-// const doneByDayPerсent = doneByDay / allTasksByDay;
 
-export default class StatisticsChart extends PureComponent {
-  render() {
-    return (
-      <ResponsiveContainer width="100%" height="100%">
-        <BarChart
-          width={500}
-          height={300}
-          data={data}
-          margin={{
-            top: 5,
-            right: 30,
-            left: 20,
-            bottom: 5,
-          }}
-        >
-          <CartesianGrid strokeDasharray="3 3" />
-          <XAxis dataKey="name" />
-          <YAxis />
-          <Tooltip />
-          <Legend />
-          <Bar dataKey="pv" fill="#8884d8" />
-          <Bar dataKey="uv" fill="#82ca9d" />
-        </BarChart>
-      </ResponsiveContainer>
-    );
-  }
-}
+export const StatisticsChart = () => {
+  return (
+    <BarChart
+      width={860}
+      height={440}
+      data={data}
+      margin={{
+        top: 5,
+        right: 30,
+        left: 20,
+        bottom: 5,
+      }}
+    >
+      <defs>
+        <linearGradient id="colorDv" x1="0" y1="0" x2="0" y2="1">
+          <stop offset="5%" stopColor="#FFD2DD" stopOpacity={0} />
+          <stop offset="95%" stopColor="#FFD2DD" stopOpacity={0.8} />
+        </linearGradient>
+        <linearGradient id="colorMv" x1="0" y1="0" x2="0" y2="1">
+          <stop offset="5%" stopColor="#3E85F3" stopOpacity={0} />
+          <stop offset="95%" stopColor="#3E85F3" stopOpacity={0.8} />
+        </linearGradient>
+      </defs>
+      <CartesianGrid strokeDasharray="3 3" />
+      <XAxis dataKey="name" />
+      <YAxis />
+      <Tooltip />
+      <Bar dataKey="dv" fill="url(#colorDv)" barSize={27}>
+        <LabelList dataKey="dp" position="top" />
+      </Bar>
+      <Bar dataKey="mv" fill="url(#colorMv)" barSize={27}>
+        <LabelList dataKey="mp" position="top" />
+      </Bar>
+    </BarChart>
+  );
+};
+export default StatisticsChart;

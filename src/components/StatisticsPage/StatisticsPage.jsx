@@ -6,7 +6,6 @@ const StatisticsPage = () => {
   return (
     <div>
       <StatisticsChart />
-      <PeriodPaginator />
     </div>
   );
 };
