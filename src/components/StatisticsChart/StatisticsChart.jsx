@@ -14,16 +14,16 @@ import {
 const todoByDay = 5;
 const inprogressByDay = 10;
 const doneByDay = 5;
+const todoByMonth = 30;
+const inprogressByMonth = 20;
+const doneByMonth = 15;
+
 const allTasksByDay = todoByDay + inprogressByDay + doneByDay;
 const todoByDayPerсent = Math.round((todoByDay / allTasksByDay) * 100);
 const inprogressByDayPerсent = Math.round(
   (inprogressByDay / allTasksByDay) * 100
 );
 const doneByDayPerсent = Math.round((doneByDay / allTasksByDay) * 100);
-
-const todoByMonth = 30;
-const inprogressByMonth = 20;
-const doneByMonth = 15;
 const allTasksByMonth = todoByMonth + inprogressByMonth + doneByMonth;
 const todoByMonthPerсent = Math.round((todoByMonth / allTasksByMonth) * 100);
 const inprogressByMonthPerсent = Math.round(
