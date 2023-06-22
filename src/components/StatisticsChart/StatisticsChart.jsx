@@ -2,13 +2,12 @@ import React from 'react';
 import {
   BarChart,
   Bar,
-  // Cell,
   LabelList,
   XAxis,
   YAxis,
+  Cell,
   CartesianGrid,
   Tooltip,
-  Legend,
 } from 'recharts';
 // для прикладу створюємо константи, в подальшому отримуватимемо дані з бекенду
 const todoByDay = 6;
@@ -57,38 +56,44 @@ const data = [
 
 export const StatisticsChart = () => {
   return (
-    <BarChart
-      width={860}
-      height={440}
-      data={data}
-      margin={{
-        top: 5,
-        right: 30,
-        left: 20,
-        bottom: 5,
-      }}
-    >
-      <defs>
-        <linearGradient id="colorDv" x1="0" y1="0" x2="0" y2="1">
-          <stop offset="5%" stopColor="#FFD2DD" stopOpacity={0} />
-          <stop offset="95%" stopColor="#FFD2DD" stopOpacity={0.8} />
-        </linearGradient>
-        <linearGradient id="colorMv" x1="0" y1="0" x2="0" y2="1">
-          <stop offset="5%" stopColor="#3E85F3" stopOpacity={0} />
-          <stop offset="95%" stopColor="#3E85F3" stopOpacity={0.8} />
-        </linearGradient>
-      </defs>
-      <CartesianGrid strokeDasharray="3 3" />
-      <XAxis dataKey="name" />
-      <YAxis />
-      <Tooltip />
-      <Bar dataKey="dv" fill="url(#colorDv)" barSize={27}>
-        <LabelList dataKey="dp" position="top" />
-      </Bar>
-      <Bar dataKey="mv" fill="url(#colorMv)" barSize={27}>
-        <LabelList dataKey="mp" position="top" />
-      </Bar>
-    </BarChart>
+    <div>
+      <BarChart
+        width={860}
+        height={440}
+        data={data}
+        margin={{
+          top: 85,
+          right: 40,
+          left: 40,
+          bottom: 69,
+        }}
+      >
+        <defs>
+          <linearGradient id="colorDv" x1="0" y1="0" x2="0" y2="1">
+            <stop offset="5%" stopColor="#FFD2DD" stopOpacity={0} />
+            <stop offset="95%" stopColor="#FFD2DD" stopOpacity={0.8} />
+          </linearGradient>
+          <linearGradient id="colorMv" x1="0" y1="0" x2="0" y2="1">
+            <stop offset="5%" stopColor="#3E85F3" stopOpacity={0} />
+            <stop offset="95%" stopColor="#3E85F3" stopOpacity={0.8} />
+          </linearGradient>
+        </defs>
+        <CartesianGrid vertical={false} stroke="#E3F3FF" />
+        <XAxis dataKey="name" axisLine={false} tickLine={false} />
+        <YAxis
+          label={{ value: 'Index', position: 'top' }}
+          axisLine={false}
+          tickLine={false}
+        />
+        <Tooltip />
+        <Bar dataKey="dv" fill="url(#colorDv)" barSize={27}>
+          <LabelList dataKey="dp" position="top" />
+        </Bar>
+        <Bar dataKey="mv" fill="url(#colorMv)" barSize={27}>
+          <LabelList dataKey="mp" position="top" />
+        </Bar>
+      </BarChart>
+    </div>
   );
 };
 export default StatisticsChart;
