@@ -7,6 +7,7 @@ import 'react-datepicker/dist/react-datepicker.css';
 import './PeriodPaginator.css';
 
 const PeriodPaginator = () => {
+  const filterdate = useSelector(selectFilterDate);
   const dispatch = useDispatch();
 
   const CustomInput = React.forwardRef(({ value, onClick }, ref) => (
@@ -15,10 +16,14 @@ const PeriodPaginator = () => {
     </button>
   ));
 
+  const handleChange = date => {
+    dispatch(setFilterDate(date[Symbol.toPrimitive]('number')));
+  };
+
   return (
     <DatePicker
-      selected={useSelector(selectFilterDate)}
-      onChange={date => dispatch(setFilterDate(date))}
+      selected={filterdate}
+      onChange={handleChange}
       customInput={<CustomInput />}
       dateFormat="d MMM yyyy"
       calendarStartDay={1}

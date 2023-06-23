@@ -1,4 +1,6 @@
 import React from 'react';
+import { useSelector } from 'react-redux';
+import { selectFilterDate } from 'redux/filterdate/filterdate-selector';
 import {
   BarChart,
   Bar,
@@ -14,10 +16,7 @@ import css from './StatisticsChart.module.css';
 import { getTasks } from '../../exampleTask';
 
 const StatisticsChart = () => {
-  // покищо фіксована дата і місяць, потім ми її отримаємо із календяря
-  // const toDay = useSelector(selectToDay);
-  const toDay = '2023-06-23';
-
+  const toDay = useSelector(selectFilterDate);
   const tasks = getTasks();
 
   let filteredTasksByDay = null;
