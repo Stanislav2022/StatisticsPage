@@ -1,9 +1,9 @@
 import React, { useState } from 'react';
 import DatePicker from 'react-datepicker';
 import 'react-datepicker/dist/react-datepicker.css';
-import './SmallCalendar.css';
+import './PeriodPaginator.css';
 
-const SmallCalendar = () => {
+const PeriodPaginator = () => {
   const [startDate, setStartDate] = useState(new Date());
 
   const CustomInput = React.forwardRef(({ value, onClick }, ref) => (
@@ -25,4 +25,4 @@ const SmallCalendar = () => {
   );
 };
 
-export default SmallCalendar;
+export default PeriodPaginator;

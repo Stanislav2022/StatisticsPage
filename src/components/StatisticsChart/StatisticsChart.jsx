@@ -13,7 +13,7 @@ import css from './StatisticsChart.module.css';
 // Для прикладу створив json
 import { getTasks } from '../../exampleTask';
 
-export const StatisticsChart = () => {
+const StatisticsChart = () => {
   // покищо фіксована дата і місяць, потім ми її отримаємо із календяря
   // const toDay = useSelector(selectToDay);
   const toDay = '2023-06-23';
