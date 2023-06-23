@@ -55,7 +55,7 @@ const data = [
 
 export const StatisticsChart = () => {
   return (
-    <div>
+    <div className="" statistics__container>
       <BarChart
         width={860}
         height={440}
