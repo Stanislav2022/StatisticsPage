@@ -11,7 +11,7 @@ import {
 } from 'redux-persist';
 import storage from 'redux-persist/lib/storage';
 
-import { filtersReducer } from './filterdate/filterdate-slice';
+import { filterDateReducer } from './filterdate/filterdate-slice';
 
 const middleware = [
   ...getDefaultMiddleware({
@@ -28,7 +28,7 @@ const followPersistConfig = {
 
 export const store = configureStore({
   reducer: {
-    date: filtersReducer,
+    date: filterDateReducer,
   },
   middleware,
 });
