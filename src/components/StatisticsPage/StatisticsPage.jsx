@@ -3,7 +3,7 @@ import StatisticsChart from '../StatisticsChart/StatisticsChart';
 
 const StatisticsPage = () => {
   return (
-    <div>
+    <div className={css.statistic__container}>
       <StatisticsChart />
     </div>
   );

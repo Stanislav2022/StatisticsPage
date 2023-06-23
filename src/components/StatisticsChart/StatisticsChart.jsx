@@ -8,6 +8,8 @@ import {
   CartesianGrid,
   Tooltip,
 } from 'recharts';
+import css from './StatisticsChart.module.css';
+
 // для прикладу створюємо константи, в подальшому отримуватимемо дані з бекенду
 const todoByDay = 6;
 const inprogressByDay = 10;
@@ -55,7 +57,7 @@ const data = [
 
 export const StatisticsChart = () => {
   return (
-    <div className="" statistics__container>
+    <div className={css.statistics__container}>
       <BarChart
         width={860}
         height={440}
