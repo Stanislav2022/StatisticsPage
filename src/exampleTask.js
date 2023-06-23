@@ -76,7 +76,7 @@ const tasks = [
     start: '09:04',
     end: '09:34',
     priority: 'low',
-    date: '2023-06-24',
+    date: '2023-05-24',
     category: 'to-do',
   },
   {
@@ -84,7 +84,7 @@ const tasks = [
     start: '09:05',
     end: '09:35',
     priority: 'medium',
-    date: '2023-06-24',
+    date: '2023-05-24',
     category: 'in-progress',
   },
   {
@@ -92,7 +92,7 @@ const tasks = [
     start: '09:06',
     end: '09:36',
     priority: 'high',
-    date: '2023-06-24',
+    date: '2023-05-24',
     category: 'done',
   },
 ];
