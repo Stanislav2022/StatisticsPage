@@ -10,6 +10,8 @@ import {
 } from 'recharts';
 import css from './StatisticsChart.module.css';
 
+// ля прикладу створив json
+import exampleTask from '../../';
 // для прикладу створюємо константи, в подальшому отримуватимемо дані з бекенду
 const todoByDay = 6;
 const inprogressByDay = 10;

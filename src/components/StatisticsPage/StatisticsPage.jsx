@@ -1,5 +1,6 @@
 import React from 'react';
 import StatisticsChart from '../StatisticsChart/StatisticsChart';
+import css from './StatisticsPage.module.css';
 
 const StatisticsPage = () => {
   return (
