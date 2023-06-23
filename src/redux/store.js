@@ -10,7 +10,6 @@ import {
   REGISTER,
 } from 'redux-persist';
 import storage from 'redux-persist/lib/storage';
-
 import { filterDateReducer } from './filterdate/filterdate-slice';
 
 const middleware = [
@@ -21,16 +20,12 @@ const middleware = [
   }),
 ];
 
-const followPersistConfig = {
-  key: 'follow',
-  storage,
-};
-
 export const store = configureStore({
   reducer: {
-    date: filterDateReducer,
+    filterdate: filterDateReducer,
   },
   middleware,
+  devTools: process.env.NODE_ENV === 'development',
 });
 
 export const persistor = persistStore(store);

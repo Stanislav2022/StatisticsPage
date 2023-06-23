@@ -1,8 +1,8 @@
 import { createSlice } from '@reduxjs/toolkit';
 
 const filterDateSlice = createSlice({
-  name: 'filter',
-  initialState: new Date(),
+  name: 'filterdate',
+  initialState: '2023-06-23',
   reducers: {
     setFilterDate: (_, { payload }) => payload,
   },
