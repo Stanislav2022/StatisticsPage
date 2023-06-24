@@ -10,7 +10,7 @@ import {
   CartesianGrid,
   Tooltip,
 } from 'recharts';
-import css from './StatisticsChart.module.css';
+import './StatisticsChart.module.css';
 
 // Для прикладу створив json
 import { getTasks } from '../../exampleTask';
