@@ -1,7 +1,7 @@
 import React from 'react';
 import PeriodPaginator from '../PeriodPaginator/PeriodPaginator';
 import StatisticsChart from '../StatisticsChart/StatisticsChart';
-import css from './StatisticsPage.css';
+import './StatisticsPage.css';
 
 const StatisticsPage = () => {
   return (
