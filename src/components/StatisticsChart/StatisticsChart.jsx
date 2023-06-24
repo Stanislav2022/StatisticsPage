@@ -10,7 +10,7 @@ import {
   CartesianGrid,
   Tooltip,
 } from 'recharts';
-import './StatisticsChart.module.css';
+import './StatisticsChart.css';
 
 // Для прикладу створив json
 import { getTasks } from '../../exampleTask';
@@ -84,7 +84,7 @@ const StatisticsChart = () => {
   ];
 
   return (
-    <div className={css.statistics__container}>
+    <div className="statistics__container">
       <BarChart
         width={860}
         height={440}
