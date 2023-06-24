@@ -1,11 +1,11 @@
 import React from 'react';
 import PeriodPaginator from '../PeriodPaginator/PeriodPaginator';
 import StatisticsChart from '../StatisticsChart/StatisticsChart';
-import css from './StatisticsPage.module.css';
+import css from './StatisticsPage.css';
 
 const StatisticsPage = () => {
   return (
-    <div className={css.statistic__container}>
+    <div className="statistic__container">
       <PeriodPaginator />
       <StatisticsChart />
     </div>
