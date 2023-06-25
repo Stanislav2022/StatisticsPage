@@ -1,3 +1,8 @@
+.paginator__box {
+    display: flex;
+    align-items: center
+}
+
 .custom-input {
     padding: 8px 12px;
     border-radius: 8px;
@@ -131,4 +136,35 @@
 .react-datepicker__day--outside-month {
     color: transparent;
     pointer-events: none;
+}
+
+.paginator__btn--box{
+    display: flex;
+    outline: 1px solid #DCE3E5;
+    margin-left: 8px;
+        padding: 0;
+        box-sizing: border-box;
+border-radius: 8px;
+}
+.paginator__btn--list{
+    display: flex;
+    height: 34px;
+    width: 37px;
+
+    background-color: #ffffff;
+    justify-content: center;
+    align-items: center;
+
+}
+.paginator__btn--list:not(:last-child){
+    border-right: 1px solid #DCE3E5;
+        box-sizing: border-box;
+
+}
+
+.arrow{
+    fill: #DCE3E5;
+}
+.arrow:hover{
+        fill: #343434;
 }

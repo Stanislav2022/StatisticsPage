@@ -5,6 +5,7 @@ import { setFilterDate } from 'redux/filterdate/filterdate-slice';
 import DatePicker from 'react-datepicker';
 import 'react-datepicker/dist/react-datepicker.css';
 import './PeriodPaginator.css';
+import { SlArrowLeft, SlArrowRight } from 'react-icons/sl';
 
 const PeriodPaginator = () => {
   const filterdate = useSelector(selectFilterDate);
@@ -21,15 +22,25 @@ const PeriodPaginator = () => {
   };
 
   return (
-    <DatePicker
-      selected={filterdate}
-      onChange={handleChange}
-      customInput={<CustomInput />}
-      dateFormat="d MMM yyyy"
-      calendarStartDay={1}
-      formatWeekDay={nameOfDay => nameOfDay.substr(0, 1)}
-      fixedHeight
-    />
+    <div className="paginator__box">
+      <DatePicker
+        selected={filterdate}
+        onChange={handleChange}
+        customInput={<CustomInput />}
+        dateFormat="d MMM yyyy"
+        calendarStartDay={1}
+        formatWeekDay={nameOfDay => nameOfDay.substr(0, 1)}
+        fixedHeight
+      />
+      <ul className="paginator__btn--box">
+        <li className="paginator__btn--list">
+          <SlArrowLeft size={18} className="arrow" />
+        </li>
+        <li className="paginator__btn--list">
+          <SlArrowRight size={18} className="arrow" />
+        </li>
+      </ul>
+    </div>
   );
 };
 
