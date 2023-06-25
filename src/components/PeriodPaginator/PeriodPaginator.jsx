@@ -6,6 +6,7 @@ import DatePicker from 'react-datepicker';
 import 'react-datepicker/dist/react-datepicker.css';
 import './PeriodPaginator.css';
 import { SlArrowLeft, SlArrowRight } from 'react-icons/sl';
+import Icons from '../../images/svg/sprite.svg';
 
 const PeriodPaginator = () => {
   const filterdate = useSelector(selectFilterDate);
@@ -34,7 +35,9 @@ const PeriodPaginator = () => {
       />
       <ul className="paginator__btn--box">
         <li className="paginator__btn--list">
-          <SlArrowLeft size={18} className="arrow" />
+          <svg viewBox="0 0 18 18">
+            <use xlinkHref={`${Icons}#arrow - left`} />
+          </svg>
         </li>
         <li className="paginator__btn--list">
           <SlArrowRight size={18} className="arrow" />
