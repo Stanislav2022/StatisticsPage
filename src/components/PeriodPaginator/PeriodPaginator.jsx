@@ -5,7 +5,6 @@ import { setFilterDate } from 'redux/filterdate/filterdate-slice';
 import DatePicker from 'react-datepicker';
 import 'react-datepicker/dist/react-datepicker.css';
 import './PeriodPaginator.css';
-import { SlArrowLeft, SlArrowRight } from 'react-icons/sl';
 import Icons from '../../images/svg/sprite.svg';
 
 const PeriodPaginator = () => {
@@ -22,6 +21,32 @@ const PeriodPaginator = () => {
     dispatch(setFilterDate(date[Symbol.toPrimitive]('number')));
   };
 
+  const addOneDay = (date = new Date()) => {
+    date.setDate(date.getDate() + 1);
+    return date;
+  };
+  const previousOneDay = (date = new Date()) => {
+    date.setDate(date.getDate() - 1);
+    return date;
+  };
+
+  const nextDate = () => {
+    console.log('+1');
+    dispatch(
+      setFilterDate(
+        addOneDay(new Date(filterdate))[Symbol.toPrimitive]('number')
+      )
+    );
+  };
+  const previousDate = () => {
+    console.log('-1');
+    dispatch(
+      setFilterDate(
+        previousOneDay(new Date(filterdate))[Symbol.toPrimitive]('number')
+      )
+    );
+  };
+
   return (
     <div className="paginator__box">
       <DatePicker
@@ -33,16 +58,32 @@ const PeriodPaginator = () => {
         formatWeekDay={nameOfDay => nameOfDay.substr(0, 1)}
         fixedHeight
       />
-      <ul className="paginator__btn--box">
-        <li className="paginator__btn--list">
-          <svg viewBox="0 0 18 18">
-            <use xlinkHref={`${Icons}#arrow - left`} />
+      <div className="paginator__btn--box">
+        <button className="arrow__btn">
+          <svg
+            viewBox="0 0 18 18"
+            className="arrow"
+            onClick={() => previousDate()}
+          >
+            <use xlinkHref={`${Icons}#chevron-left`} />
           </svg>
-        </li>
-        <li className="paginator__btn--list">
-          <SlArrowRight size={18} className="arrow" />
-        </li>
-      </ul>
+        </button>
+        <button className="arrow__btn" onClick={() => nextDate()}>
+          <svg viewBox="0 0 18 18" className="arrow">
+            <use xlinkHref={`${Icons}#chevron-right`} />
+          </svg>
+        </button>
+      </div>
+      <div className="chart__legend--box">
+        <ul className="chart__legend--list">
+          <li className="chart__legend--item">
+            <p className="chart__legend--text">By Day</p>
+          </li>
+          <li className="chart__legend--item">
+            <p className="chart__legend--text other__color">By Month</p>
+          </li>
+        </ul>
+      </div>
     </div>
   );
 };
